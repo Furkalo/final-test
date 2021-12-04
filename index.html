@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Final Test</title>
+	<script type="text/javascript">
+		var positions = ['Junior developer', 'Middle developer','Senior developer', 'Junior QA', 'Middle QA', 'Senior QA', 'Project manager'];
+
+		var firstname = prompt("Введите имя на должность 'Junior developer'");
+        var secondname = prompt("Введите имя на должность 'Middle developer' ");
+		var thirdname = prompt("Введите имя на должность 'Senior developer' ");
+		var fourthname = prompt("Введите имя на должность 'Junior QA' ");
+		var fifthname = prompt("Введите имя на должность 'Middle QA' ");
+		var sixthname = prompt("Введите имя на должность 'Senior QA' ");
+		var seventhname = prompt("Введите имя на должность 'Project manager' ");
+
+function getNames(){
+var people = [firstname, secondname, thirdname, fourthname, fifthname, sixthname, seventhname];
+document.write(people);
+}
+
+function createTeam(persone){
+	    team = {
+			name1 : {
+					name : firstname,
+					position : 'Junior developer'
+			},
+			name2 : {
+					name : secondname,
+					position : 'Middle developer'
+			},
+			name3 : {
+					name : thirdname,
+					position : 'Senior developer'
+			},
+			name4 : {
+					name : fourthname,
+					position : 'Junior QA'
+			},
+			name5 : {
+					name : fifthname,
+					position : 'Middle QA'
+			},
+			name6 : {
+					name : sixthname,
+					position : 'Senior QA'
+			},
+			name7 : {
+					name : seventhname,
+					position : 'Project manager'
+			},
+	    }
+
+		team.showTeam = function() {
+            console.log(firstname + " - " + positions[0] + ". Зарплата - " + team.name1.salary);
+			console.log(secondname + " - " + positions[1] + ". Зарплата - " + team.name2.salary);
+			console.log(thirdname + " - " + positions[2] + ". Зарплата - " + team.name3.salary);
+			console.log(fourthname + " - " + positions[3] + ". Зарплата - " + team.name4.salary);
+			console.log(fifthname + " - " + positions[4] + ". Зарплата - " + team.name5.salary);
+			console.log(sixthname + " - " + positions[5] + ". Зарплата - " + team.name6.salary);
+			console.log(seventhname+ " - " + positions[6] + ". Зарплата - " + team.name7.salary);
+			console.log("**************************");
+	    };
+
+	var persone = team;
+
+	console.log(persone);
+    return persone;
+}
+
+function setSalary(persone){
+	for (var element in team) {
+		
+	    if(  team[element].position == "Junior developer"){
+			team[element]['salary'] = Math.floor(Math.random() * 500) + 499;
+		} 
+		else if( team[element].position == "Middle developer"){
+			team[element]['salary'] = Math.floor(Math.random() * 500) + 1499; 
+		}
+		else if(team[element].position == "Senior developer"){
+			team[element]['salary'] = Math.floor(Math.random() * 500) + 2499; 
+		}
+		else 
+			team[element]['salary'] = Math.floor(Math.random() * 500) + 3999;
+	}
+	return team;
+}
+
+function tellAboutYourSelf(persone){
+	console.log(firstname + " - " + team.name1.position + ". Я зарабатывою " + team.name1['salary'] + "$.");
+	console.log(secondname + " - " + team.name2.position + ". Я зарабатывою " + team.name2['salary'] + "$.");
+	console.log(thirdname + " - " + team.name3.position + ". Я зарабатывою " + team.name3['salary'] + "$.");
+	console.log(fourthname + " - " + team.name4.position + ". Я зарабатывою " + team.name4['salary'] + "$.");
+	console.log(fifthname + " - " + team.name5.position + ". Я зарабатывою " + team.name5['salary'] + "$.");
+	console.log(sixthname + " - " + team.name6.position + ". Я зарабатывою " + team.name6['salary'] + "$.");
+	console.log(seventhname + " - " + team.name7.position + ". Я зарабатывою " + team.name7['salary'] + "$.");
+	console.log("************************");
+}
+
+getNames();
+createTeam();
+setSalary();
+tellAboutYourSelf();
+team.showTeam();
+
+	</script>
+</head>
+<body> 
+
+</body>
+</html>
